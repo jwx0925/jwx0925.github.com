@@ -85,11 +85,11 @@ JB:
   comments:
     provider: disqus
     disqus:
-      short_name: justjavac
+      short_name: jwx0925
     livefyre:
-      site_id  justjavac
+      site_id  jwx0925
     intensedebate:
-      account: justjavac
+      account: jwx0925
     facebook:
       appid: 123
       num_posts: 5
