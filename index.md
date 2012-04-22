@@ -43,7 +43,7 @@ Here's a sample "posts list".
 
 aaaa
 --------
-2222ss°¡°¡°¡
+2222ss
 =======
 
 ## To-Do
