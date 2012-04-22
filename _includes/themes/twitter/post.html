@@ -1,0 +1,51 @@
+<div class="page-header">
+  <h1>{{ page.title }} <small>{{ page.tagline }}</small></h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    {{ content }}
+    <hr>
+    <div class="pagination">
+      <ul>
+      {% if page.previous %}
+        <li class="prev"><a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; {{ page.previous.title }}</a></li>
+      {% else %}
+        <li class="prev disabled"><a>上一篇: 没有了</a></li>
+      {% endif %}
+        <li><a href="{{ BASE_PATH }}{{ site.JB.archive_path }}">归档</a></li>
+      {% if page.next %}
+        <li class="next"><a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">{{ page.next.title }} &rarr;</a></li>
+      {% else %}
+        <li class="next disabled"><a>下一篇: 没有了</a>
+      {% endif %}
+      </ul>
+    </div>
+    <hr>
+    {% include JB/comments %}
+  </div>
+  
+  <aside class="span4">
+    <h4>发布日期</h4>
+    <div class="date"><span>{{ page.date | date:"%Y-%m-%d" }}</span></div>
+
+  {% unless page.tags == empty %}
+    <h4>标签</h4>
+    <ul class="tag_box">
+    {% assign tags_list = page.tags %}
+    {% include JB/tags_list %}
+    </ul>
+  {% endunless %}  
+    
+    <section>
+    <h4>最近发表</h4>
+    <ul id="recent_posts">
+    {% for rpost in site.posts limit: 6 %}
+      <li class="post">
+        <a href="{{ BASE_PATH }}{{ rpost.url }}">{{ rpost.title }}</a>
+      </li>
+    {% endfor %}
+    </ul>
+    </section>
+  </aside>
+</div>
