@@ -45,7 +45,7 @@ Google一下，找到了[《9款有用的Javascript代码高亮脚本》](http:/
     		}
     	</pre>
 		
-	第二种（PS：一定要加上CDATA）：
+第二种（PS：一定要加上CDATA）：
 
     	<s cript type="syntaxhighlighter" class="brush: js"><![CDATA[
     	  /**
@@ -59,18 +59,18 @@ Google一下，找到了[《9款有用的Javascript代码高亮脚本》](http:/
     	  }
     	]]></script>
 	
-	PS:为了让其显示原版，我把< pre>和< script>都写错了。。。
+PS:为了让其显示原版，我把< pre>和< script>都写错了。。。
     
     最终的效果为：
-<pre class="brush: js">
-/**
- * SyntaxHighlighter
- */
-function foo()
-{
-	if (counter <= 10)
-		return;
-	// it works!
-}
-</pre>
+	<pre class="brush: js">
+		/**
+		 * SyntaxHighlighter
+		 */
+		function foo()
+		{
+			if (counter <= 10)
+				return;
+			// it works!
+		}
+	</pre>
 啊！基本上是翻译的SyntaxHighlighter的文档。水了水了~~
