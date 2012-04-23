@@ -61,7 +61,7 @@ Google一下，找到了[《9款有用的Javascript代码高亮脚本》](http:/
 	
 PS:为了让其显示原版，我把< pre>和< script>都写错了。。。
     
-    最终的效果为：
+最终的效果为：
 	<pre class="brush: java">
 	/**
 	 * SyntaxHighlighter
