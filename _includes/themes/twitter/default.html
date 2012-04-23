@@ -15,7 +15,21 @@
     <!-- Le styles -->
     <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ ASSET_PATH }}/css/style.css?body=1" rel="stylesheet" media="all">
-
+	<!-- Include SyntaxHighlighter required JS files -->
+	<script type="text/javascript" src="{{ ASSET_PATH }}/js/shCore.js"></script>
+	<script type="text/javascript" src="{{ ASSET_PATH }}/js/shBrushJava.js"></script>
+	<!-- Include SyntaxHighlighter the core style and default theme -->
+	<link href="{{ ASSET_PATH }}/css/shCore.css" rel="stylesheet" type="text/css" />
+	<link href="{{ ASSET_PATH }}/css/shThemeDefault.css" rel="stylesheet" type="text/css" />
+	<pre class="brush: java">
+	function foo()
+	{
+	}
+	</pre>
+	<!-- Finally, to actually run the highlighter, you need to include this JS on your page -->
+	<script type="text/javascript">
+		 SyntaxHighlighter.all()
+	</script>
     <!-- Le fav and touch icons -->
   <!-- Update these with your own images
     <link rel="shortcut icon" href="images/favicon.ico">
