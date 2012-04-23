@@ -64,17 +64,6 @@ PS:为了让其显示原版，我把< pre>和< script>都写错了。。。
 最终的效果为：
 
 <pre class="brush: java">
-/**
- * SyntaxHighlighter
- */
-function foo()
-{
-	if (counter <= 10)
-		return;
-	// it works!
-}
-</pre>
-<pre class="brush: java">
 package try_test;
 
 public class TestTry {
@@ -85,21 +74,8 @@ public class TestTry {
             outter try 
             return success!
          */
-        System.out.println(doTry());
+        System.out.println("Good job!");
 
-    }
-
-    /**
-     * @return 
-     * 
-     */
-    private static String doTry() {
-        try {
-            System.out.println("inner try ");
-            return "return success!";
-        } finally {
-            System.out.println("outter try ");
-        }
     }
 
 }
