@@ -63,14 +63,14 @@ PS:为了让其显示原版，我把< pre>和< script>都写错了。。。
     
     最终的效果为：
 	<pre class="brush: java">
-		/**
-		 * SyntaxHighlighter
-		 */
-		function foo()
-		{
-			if (counter <= 10)
-				return;
-			// it works!
-		}
+	/**
+	 * SyntaxHighlighter
+	 */
+	function foo()
+	{
+		if (counter <= 10)
+			return;
+		// it works!
+	}
 	</pre>
 啊！基本上是翻译的SyntaxHighlighter的文档。水了水了~~
