@@ -1,38 +1,38 @@
 ---
 layout: post
-title: Ê¹ÓÃSyntaxHighlighterÎª²©¿ÍÌí¼Ó´úÂë¸ßÁÁ¹¦ÄÜ
-description: Ê¹ÓÃSyntaxHighlighterÎª²©¿ÍÌí¼Ó´úÂë¸ßÁÁ¹¦ÄÜ
-keywords: syntaxHighlighter, highlighter, blog
+title: ä½¿ç”¨SyntaxHighlighterä¸ºåšå®¢æ·»åŠ ä»£ç é«˜äº®åŠŸèƒ½
+description: ä½¿ç”¨SyntaxHighlighterä¸ºåšå®¢æ·»åŠ ä»£ç é«˜äº®åŠŸèƒ½
+keywords: syntaxHighlighter, highlighter,blog
 category : life
 tags : [life]
 ---
 
-×÷ÎªÒ»¸öĞÂÊ±´úµÄÂëÅ©£¬Ğ´²©¿Í¶àÊıÊÇ¼¼ÊõĞÔµÄblog£¬ËùÒÔÉÙ²»ÁËĞ´´úÂë£¬Èç¹ûÃ»ÓĞ¸ßÁÁÖ§³ÖµÄ´úÂëÏÔÊ¾£¬¶ÁÓĞ´úÂëµÄblogÊÇºÜ²»Ë¬µÄÒ»¼şÊÂ¡£ËùÒÔ£¬½ñÌì¿ªÊ¼ÎªÎÒµÄ²©¿ÍÑ°ÕÒÖ§³Ö´úÂë¸ßÁÁµÄ²å¼ş¡£
-GoogleÒ»ÏÂ£¬ÕÒµ½ÁË[¡¶9¿îÓĞÓÃµÄJavascript´úÂë¸ßÁÁ½Å±¾¡·](http://www.qianduan.net/9-useful-javascript-syntax-highlighting-scripts.html)ÕâÆªÎÄÕÂ£¬Ñ¡ÔñÁËµÚÒ»¸ö²å¼ş[SyntaxHighlighter](http://alexgorbatchev.com/SyntaxHighlighter).
+ä½œä¸ºä¸€ä¸ªæ–°æ—¶ä»£çš„ç å†œï¼Œå†™åšå®¢å¤šæ•°æ˜¯æŠ€æœ¯æ€§çš„blogï¼Œæ‰€ä»¥å°‘ä¸äº†å†™ä»£ç ï¼Œå¦‚æœæ²¡æœ‰é«˜äº®æ”¯æŒçš„ä»£ç æ˜¾ç¤ºï¼Œè¯»æœ‰ä»£ç çš„blogæ˜¯å¾ˆä¸çˆ½çš„ä¸€ä»¶äº‹ã€‚æ‰€ä»¥ï¼Œä»Šå¤©å¼€å§‹ä¸ºæˆ‘çš„åšå®¢å¯»æ‰¾æ”¯æŒä»£ç é«˜äº®çš„æ’ä»¶ã€‚
+Googleä¸€ä¸‹ï¼Œæ‰¾åˆ°äº†[ã€Š9æ¬¾æœ‰ç”¨çš„Javascriptä»£ç é«˜äº®è„šæœ¬ã€‹](http://www.qianduan.net/9-useful-javascript-syntax-highlighting-scripts.html)è¿™ç¯‡æ–‡ç« ï¼Œé€‰æ‹©äº†ç¬¬ä¸€ä¸ªæ’ä»¶[SyntaxHighlighter](http://alexgorbatchev.com/SyntaxHighlighter).
 
-1. [ÏÂÔØ](http://alexgorbatchev.com/SyntaxHighlighter/download/)SyntaxHighlighter°ü£¬ÎÒÏÂÔØµÄÊÇ×îĞÂµÄ3.0.83°æ±¾¡£
-2. ¸ú×ÅÀı×Ó×ö£º
-    Ìí¼ÓshCore.js¡¢shCore.cssºÍshThemeDefault.css£¨Ò²¿ÉÒÔÑ¡ÔñÆäËûµÄtheme.css£©µ½ÄãµÄpage
+1. [ä¸‹è½½](http://alexgorbatchev.com/SyntaxHighlighter/download/)SyntaxHighlighteråŒ…ï¼Œæˆ‘ä¸‹è½½çš„æ˜¯æœ€æ–°çš„3.0.83ç‰ˆæœ¬ã€‚
+2. è·Ÿç€ä¾‹å­åšï¼š
+    æ·»åŠ shCore.jsã€shCore.csså’ŒshThemeDefault.cssï¼ˆä¹Ÿå¯ä»¥é€‰æ‹©å…¶ä»–çš„theme.cssï¼‰åˆ°ä½ çš„page
 	
 			<script type="text/javascript" src="js/shCore.js"></script>
 			<link href="css/shThemeDefault.css" rel="stylesheet" type="text/css" />
 			<link href="css/shThemeDefault.css" rel="stylesheet" type="text/css" />
 			
-	Ìí¼ÓÄãĞèÒªµÄÓïÑÔµÄjs£¬±ÈÈçjavascriptµÄÊÇcss/shBrushJScript.js
+	æ·»åŠ ä½ éœ€è¦çš„è¯­è¨€çš„jsï¼Œæ¯”å¦‚javascriptçš„æ˜¯css/shBrushJScript.js
 	
 			<script type="text/javascript" src="css/shBrushJScript.js"></script>
 	
-	Ìí¼ÓÈçÏÂjs´úÂë£º
+	æ·»åŠ å¦‚ä¸‹jsä»£ç ï¼š
 	
 			<script type="text/javascript">
 				 SyntaxHighlighter.all()
 			</script>
 
-	Íê³É£¡
+	å®Œæˆï¼
 			
-3. ÔÚÒ³ÃæÉÏÈçºÎÊ¹ÓÃ£¿ÓĞÁ½ÖÖ·½·¨£º
+3. åœ¨é¡µé¢ä¸Šå¦‚ä½•ä½¿ç”¨ï¼Ÿæœ‰ä¸¤ç§æ–¹æ³•ï¼š
 
-	µÚÒ»ÖÖ£º
+	ç¬¬ä¸€ç§ï¼š
     
     	<p re class="brush: js">
     		/**
@@ -45,7 +45,7 @@ GoogleÒ»ÏÂ£¬ÕÒµ½ÁË[¡¶9¿îÓĞÓÃµÄJavascript´úÂë¸ßÁÁ½Å±¾¡·](http://www.qianduan.net/
     			// it works!
     		}
     	</pre>
-	µÚ¶şÖÖ£¨PS£ºÒ»¶¨Òª¼ÓÉÏCDATA£©£º
+	ç¬¬äºŒç§ï¼ˆPSï¼šä¸€å®šè¦åŠ ä¸ŠCDATAï¼‰ï¼š
 
     	<s cript type="syntaxhighlighter" class="brush: js"><![CDATA[
     	  /**
@@ -59,9 +59,9 @@ GoogleÒ»ÏÂ£¬ÕÒµ½ÁË[¡¶9¿îÓĞÓÃµÄJavascript´úÂë¸ßÁÁ½Å±¾¡·](http://www.qianduan.net/
     	  }
     	]]></script>
 	
-	PS:ÎªÁËÈÃÆäÏÔÊ¾Ô­°æ£¬ÎÒ°Ñ< pre>ºÍ< script>¶¼Ğ´´íÁË¡£¡£¡£
+	PS:ä¸ºäº†è®©å…¶æ˜¾ç¤ºåŸç‰ˆï¼Œæˆ‘æŠŠ< pre>å’Œ< script>éƒ½å†™é”™äº†ã€‚ã€‚ã€‚
     
-    ×îÖÕµÄĞ§¹ûÎª£º
+    æœ€ç»ˆçš„æ•ˆæœä¸ºï¼š
         <pre class="brush: js">
 		/**
 		 * SyntaxHighlighter
@@ -73,4 +73,4 @@ GoogleÒ»ÏÂ£¬ÕÒµ½ÁË[¡¶9¿îÓĞÓÃµÄJavascript´úÂë¸ßÁÁ½Å±¾¡·](http://www.qianduan.net/
 			// it works!
 		}
     	</pre>
-°¡£¡»ù±¾ÉÏÊÇ·­ÒëµÄSyntaxHighlighterµÄÎÄµµ¡£Ë®ÁËË®ÁË~~
+å•Šï¼åŸºæœ¬ä¸Šæ˜¯ç¿»è¯‘çš„SyntaxHighlighterçš„æ–‡æ¡£ã€‚æ°´äº†æ°´äº†~~
