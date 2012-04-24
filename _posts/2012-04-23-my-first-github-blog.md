@@ -29,22 +29,7 @@ tags : [life]
 
 - Ruby：解析引擎
 - [Liquid](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers)：一种模板语言
-
-    \{% for item in array %}
-	  {{ item }}
-	\{% endfor %}
-	
 - YAML：一种数据结构
-	
-	---
-	layout: post
-	title: 我在github上的第一篇博客
-	description: 我在github上的第一篇博客
-	keywords: life, jekyll
-	category : life
-	tags : [life]
-	---
-
 - [MarkDown](http://wowubuntu.com/markdown/)：一种标记语言。
 
 详细的教程可以看[jekyllbootstrap](http://jekyllbootstrap.com/lessons/jekyll-introduction.html)这篇文章,不懂得，大家可以交流~
