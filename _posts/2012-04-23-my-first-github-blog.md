@@ -27,14 +27,14 @@ tags : [life]
 
 在我看来，jekyll有4种技术：
 
-Ruby：解析引擎
-[Liquid](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers)：一种模板语言
+- Ruby：解析引擎
+- [Liquid](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers)：一种模板语言
 
     \{% for item in array %}
 	  {{ item }}
 	\{% endfor %}
 	
-YAML：一种数据结构
+- YAML：一种数据结构
 	
 	---
 	layout: post
@@ -45,7 +45,7 @@ YAML：一种数据结构
 	tags : [life]
 	---
 
-[MarkDown](http://wowubuntu.com/markdown/)：一种标记语言。
+- [MarkDown](http://wowubuntu.com/markdown/)：一种标记语言。
 
 详细的教程可以看[jekyllbootstrap](http://jekyllbootstrap.com/lessons/jekyll-introduction.html)这篇文章,不懂得，大家可以交流~
 
