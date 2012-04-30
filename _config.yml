@@ -19,8 +19,7 @@ author:
   name: Jin Wenxiang
   email: jwx0925@gmail.com
   github: jwx0925
-  twitter: jwx0925
-  feedburner: jwx0925
+
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
@@ -82,19 +81,19 @@ JB:
   # Set 'provider' to the comment provider you want to use.
   # Set 'provider' to false to turn commenting off globally.
   #
-  comments:
-    provider: disqus
-    disqus:
-      short_name: jwx0925
-    livefyre:
-      site_id  jwx0925
-    intensedebate:
-      account: jwx0925
-    facebook:
-      appid: 123
-      num_posts: 5
-      width: 580
-      colorscheme: light
+ # comments:
+  #  provider: disqus
+   # disqus:
+   #   short_name: jwx0925
+  #  livefyre:
+  #    site_id  jwx0925
+  #  intensedebate:
+  #    account: jwx0925
+  #  facebook:
+  #    appid: 123
+  #    num_posts: 5
+  #    width: 580
+  #    colorscheme: light
    
   # Settings for analytics helper
   # Set 'provider' to the analytics provider you want to use.
