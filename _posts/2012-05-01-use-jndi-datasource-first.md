@@ -24,7 +24,7 @@ tags: [J2EE,DataSource]
 
 DataSource貌似是和应用服务器绑定的，比如tomcat、Jboss等都有自己的DataSource实现。
 我试验了下tomcat(6.0)下的DataSource使用：
-首先在tomcat的配置文件context.xml中的<Context></Context>间加上以下代码:
+首先在tomcat的配置文件context.xml中的··<Context></Context>··间加上以下代码:
 
 	<Resource name="jdbc/testDs" 
               auth="Container" 
@@ -53,12 +53,14 @@ DataSource貌似是和应用服务器绑定的，比如tomcat、Jboss等都有�
 - url 表示数据库URL地址
 
 然后在代码中，就可以通过jndi获取DataSource了：
-
+<pre class="brush: java">
 	Context initCtx = new InitialContext();
-	Context envCtx = (Context) initCtx.lookup("java:comp/env");// "java:/comp/env/"是固定写法
-	DataSource ds = (DataSource) envCtx.lookup("jdbc/testDs");//后面接的是context.xml中的Resource中name属性的值
-　　Connection conn = ds.getConnection();
-
+	// "java:/comp/env/"是固定写法
+	Context envCtx = (Context) initCtx.lookup("java:comp/env");
+	//后面接的是context.xml中的Resource中name属性的值
+	DataSource ds = (DataSource) envCtx.lookup("jdbc/testDs");
+	Connection conn = ds.getConnection();
+</pre>
 在web.xml中添加如下代码：
 
 	<resource-ref>
@@ -69,14 +71,14 @@ DataSource貌似是和应用服务器绑定的，比如tomcat、Jboss等都有�
 	</resource-ref>
 		
 其实我一直很好奇为什么要在web.xml中配置这么一段，google了一下，国内的回答基本都是水的。结果还是在StackOverflow上找到了答案:
-- [What is resource-ref in web.xml used for?](http://stackoverflow.com/questions/2887967/what-is-resource-ref-in-web-xml-used-for)
+- [What is ··<resource-ref>·· in web.xml used for?](http://stackoverflow.com/questions/2887967/what-is-resource-ref-in-web-xml-used-for)
 
 
 > You can always refer to resources in your application directly by their JNDI name as configured in the container, but if you do so, essentially you wiring the container-specific name into your code. This has some disadvantages, for example, if you'll ever want to change the name later for some reason, you'll need to update all the references in all your applications, and then rebuild and redeploy them.
 
-> resource-ref introduces another layer of indirection: you specify the name you want to use in the web.xml, and depending on the container, provide a binding in a container-specific configuration file.
+> ··<resource-ref>·· introduces another layer of indirection: you specify the name you want to use in the web.xml, and depending on the container, provide a binding in a container-specific configuration file.
 
-> So here's what happens: let's say you want to lookup the java:comp/env/jdbc/primaryDB name. The container finds that web.xml has a <resource-ref> element for jdbc/primaryDB, so it will look into the container-specific configuration, that contains something similar to the following:
+> So here's what happens: let's say you want to lookup the java:comp/env/jdbc/primaryDB name. The container finds that web.xml has a ··<resource-ref>·· element for jdbc/primaryDB, so it will look into the container-specific configuration, that contains something similar to the following:
 
 	<resource-ref>
 	  <res-ref-name>jdbc/primaryDB</res-ref-name>
@@ -85,7 +87,7 @@ DataSource貌似是和应用服务器绑定的，比如tomcat、Jboss等都有�
 
 > Finally, it returns the object registered under the name of jdbc/PrimaryDBInTheContainer.
 
-- [<resource-ref> usage in Web.xml with Tomcat 5.5 and Spring](http://stackoverflow.com/questions/9078511/resource-ref-usage-in-web-xml-with-tomcat-5-5-and-spring)
+- [··<resource-ref>·· usage in Web.xml with Tomcat 5.5 and Spring](http://stackoverflow.com/questions/9078511/resource-ref-usage-in-web-xml-with-tomcat-5-5-and-spring)
 
 > The idea is that specifying resources in the web.xml has the advantage of separating the developer role from the deployer role. In other words, as a developer, you don't have to know what your required resources are actually called in production, and as the guy deploying the application, you will have a nice list of names to map to real resources.
 
@@ -94,6 +96,6 @@ DataSource貌似是和应用服务器绑定的，比如tomcat、Jboss等都有�
 在tomcat的官方文档中也能找到相应的文档：
 [JDBC_Data_Sources](http://tomcat.apache.org/tomcat-5.5-doc/jndi-resources-howto.html#JDBC_Data_Sources)
 
-什么意思呢？简单来说，就是在context.xml中配置的是global名称，而web.xml中配置的是app的本地jndi名称。web.xml中的配置起到了隔离本地和全局的作用。文中举了个例子；比如，你在同一台服务器上部署了2个同样的应用，但是是不同的版本，如果jndi的name相同，他们就会连接相同的DataSource，显然这是我们不想看到的。但是如果在web.xml配置一下<jndi-name>……</jndi-name>，这样话，虽然程序中的Jndi名称是一样的，但是实际连接的DataSource却是不同的。
+什么意思呢？简单来说，就是在context.xml中配置的是global名称，而web.xml中配置的是app的本地jndi名称。web.xml中的配置起到了隔离本地和全局的作用。文中举了个例子；比如，你在同一台服务器上部署了2个同样的应用，但是是不同的版本，如果jndi的name相同，他们就会连接相同的DataSource，显然这是我们不想看到的。但是如果在web.xml配置一下··<jndi-name>……</jndi-name>··，这样话，虽然程序中的Jndi名称是一样的，但是实际连接的DataSource却是不同的。
 
 另外，文中提到，Tomcat,JBoss, WebLogic的配置可能会有不同。
