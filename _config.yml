@@ -1,7 +1,7 @@
 # coding: utf-8
 # This is the default format. 
 # For more see: https://github.com/mojombo/jekyll/wiki/Permalinks
-permalink: /:categories/:year/:month/:day/:title 
+permalink: /:year/:month/:day/:title 
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 auto: true
@@ -102,7 +102,7 @@ JB:
   analytics:
     provider: google 
     google: 
-        tracking_id : 'UA-11003279-2'
+        tracking_id : 'UA-31307081-1'
     getclicky:
       site_id: 
     mixpanel:
