@@ -21,7 +21,11 @@ CountDownLatch最重要的方法是countDown()和await()，前者主要是倒数
 下面的例子简单的说明了CountDownLatch的使用方法，模拟了100米赛跑，10名选手已经准备就绪，只等裁判一声令下。当所有人都到达终点时，比赛结束。
 
 <pre class="brush: java">
+package test.CountDownLatch;
 
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class CountDownLatchDemo {
 
@@ -61,6 +65,7 @@ public class CountDownLatchDemo {
     }
 }
 </pre>
+
 <pre class="brush: java">
 class Player implements Runnable {
 
