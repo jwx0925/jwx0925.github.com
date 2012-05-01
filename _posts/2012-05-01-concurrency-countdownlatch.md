@@ -20,7 +20,41 @@ CountDownLatch最重要的方法是countDown()和await()，前者主要是倒数
 
 下面的例子简单的说明了CountDownLatch的使用方法，模拟了100米赛跑，10名选手已经准备就绪，只等裁判一声令下。当所有人都到达终点时，比赛结束。
 
+<pre class="brush: java">
+public class CountDownLatchDemo {
 
+    private static final int PLAY_AMOUNT = 10;
+
+    public static void main(String[] args) {
+
+		//比赛开始：只要裁判说开始，那么所有跑步选手就可以开始跑了
+        CountDownLatch begin = new CountDownLatch(1);
+
+		//每个队员跑到末尾时，则报告一个到达，所有人员都到达时，则比赛结束
+        CountDownLatch end = new CountDownLatch(PLAY_AMOUNT);
+        Player[] plays = new Player[PLAY_AMOUNT];
+        for (int i = 0; i < PLAY_AMOUNT; i++) {
+            plays[i] = new Player(i + 1, begin, end);
+        }
+        ExecutorService exe = Executors.newFixedThreadPool(PLAY_AMOUNT);
+        for (Player p : plays) {//各就各位   
+            exe.execute(p);
+        }
+        System.out.println("比赛开始");
+        begin.countDown();//宣布开始   
+        try {
+            end.await();//等待结束   
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            System.out.println("比赛结束");
+        }
+
+        //注意：此时main线程已经要结束了，但是exe线程如果不关闭是不会结束的   
+        exe.shutdown();
+    }
+}
+</pre>
 
 <pre class="brush: java">
 class Player implements Runnable {
