@@ -9,7 +9,8 @@ tags: [J2EE,DataSource]
 
 传统的数据源配置
 ---------------
-刚开始写web应用的是狗都是在程序里写好数据库的配置，后来先进了点，写一个db.properties文件，文件里配置好数据库的相关信息。这时候，数据库的配置和应用程序已经解耦合了。但实际上，应用程序还是和数据库连接耦合性比较高，因为你必须要了解这些：
+刚开始写web应用的是狗都是在程序里写好数据库的配置，后来先进了点，写一个db.properties文件，文件里配置好数据库的相关信息。这时候，数据库的配置和应用程序已经解耦合了。但实际上，应用程序还是和数据库连接耦合性比较高。
+因为你必须要了解这些：
 - 你肯定要链接数据库
 - 那么你肯定要用户名和密码
 - 正式的数据库和应用服务器应该是单独的人员管理，而不是开发人员
@@ -86,10 +87,10 @@ DataSource貌似是和应用服务器绑定的，比如tomcat、Jboss等都有�
 
 > So here's what happens: let's say you want to lookup the java:comp/env/jdbc/primaryDB name. The container finds that web.xml has a `<resource-ref>` element for jdbc/primaryDB, so it will look into the container-specific configuration, that contains something similar to the following:
 
-	<resource-ref>
-	  <res-ref-name>jdbc/primaryDB</res-ref-name>
-	  <jndi-name>jdbc/PrimaryDBInTheContainer</jndi-name>
-	</resource-ref>
+		<resource-ref>
+		  <res-ref-name>jdbc/primaryDB</res-ref-name>
+		  <jndi-name>jdbc/PrimaryDBInTheContainer</jndi-name>
+		</resource-ref>
 
 > Finally, it returns the object registered under the name of jdbc/PrimaryDBInTheContainer.
 
