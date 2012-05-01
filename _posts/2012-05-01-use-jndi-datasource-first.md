@@ -13,7 +13,6 @@ tags: [J2EE,DataSource]
 刚开始写web应用的时候都是在程序里写好数据库的配置，后来呢先进了点，写一个db.properties文件，文件里配置好数据库的相关信息。这时候，数据库的配置和应用程序在一定程度上已经解耦。但实际上，应用程序还是和数据库连接耦合性比较高。
 
 因为你必须要了解这些：
-
 - 你肯定要链接数据库
 - 那么你肯定要用户名和密码
 - 正式的数据库和应用服务器应该是单独的人员管理，而不是开发人员
@@ -23,16 +22,6 @@ tags: [J2EE,DataSource]
 - 如果数据库的地址变更，则同样不会影响到应用，也只是修改数据源
 - 开发人员无需知道正式数据库的密码
 
-- name 表示指定的jndi名称
-- auth 表示认证方式，一般为Container
-- type 表示数据源床型，使用标准的javax.sql.DataSource
-- maxActive 表示连接池当中最大的数据库连接
-- maxIdle 表示最大的空闲连接数
-- maxWait 当池的数据库连接已经被占用的时候，最大等待时间
-- username 表示数据库用户名
-- password 表示数据库用户的密码
-- driverClassName 表示JDBC DRIVER
-- url 表示数据库URL地址
 
 Jndi+DataSource
 -------------
