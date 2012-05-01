@@ -58,9 +58,7 @@ public class CountDownLatchDemo {
         exe.shutdown();
     }
 }
-</pre>
 
-<pre class="brush: java">
 class Player implements Runnable {
 
     private int            id;
