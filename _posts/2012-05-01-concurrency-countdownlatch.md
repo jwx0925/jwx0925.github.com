@@ -21,6 +21,34 @@ CountDownLatch最重要的方法是countDown()和await()，前者主要是倒数
 下面的例子简单的说明了CountDownLatch的使用方法，模拟了100米赛跑，10名选手已经准备就绪，只等裁判一声令下。当所有人都到达终点时，比赛结束。
 
 <pre class="brush: java">
+class Player implements Runnable {
+
+    private int            id;
+
+    private CountDownLatch begin;
+
+    private CountDownLatch end;
+
+    public Player(int id, CountDownLatch begin, CountDownLatch end) {
+        super();
+        this.id = id;
+        this.begin = begin;
+        this.end = end;
+    }
+
+    public void run() {
+        try {
+            begin.await();//必须等到裁判countdown到0的时候才开始   
+            Thread.sleep((long) (Math.random() * 100));//模拟跑步需要的时间   
+            System.out.println("Play " + id + " has arrived. ");
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            end.countDown();//向评委报告跑到终点了   
+        }
+    }
+}
 public class CountDownLatchDemo {
 
     private static final int PLAY_AMOUNT = 10;
@@ -52,37 +80,6 @@ public class CountDownLatchDemo {
 
         //注意：此时main线程已经要结束了，但是exe线程如果不关闭是不会结束的   
         exe.shutdown();
-    }
-}
-</pre>
-
-<pre class="brush: java">
-class Player implements Runnable {
-
-    private int            id;
-
-    private CountDownLatch begin;
-
-    private CountDownLatch end;
-
-    public Player(int id, CountDownLatch begin, CountDownLatch end) {
-        super();
-        this.id = id;
-        this.begin = begin;
-        this.end = end;
-    }
-
-    public void run() {
-        try {
-            begin.await();//必须等到裁判countdown到0的时候才开始   
-            Thread.sleep((long) (Math.random() * 100));//模拟跑步需要的时间   
-            System.out.println("Play " + id + " has arrived. ");
-
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } finally {
-            end.countDown();//向评委报告跑到终点了   
-        }
     }
 }
 </pre>
