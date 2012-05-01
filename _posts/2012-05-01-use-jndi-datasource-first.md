@@ -8,7 +8,7 @@ tags: [J2EE,DataSource]
 ---
 
 传统的数据源配置
-================
+---------------
 刚开始写web应用的是狗都是在程序里写好数据库的配置，后来先进了点，写一个db.properties文件，文件里配置好数据库的相关信息。这时候，数据库的配置和应用程序已经解耦合了。但实际上，应用程序还是和数据库连接耦合性比较高，因为你必须要了解这些：
 - 你肯定要链接数据库 
 - 那么你肯定要用户名和密码 
@@ -20,7 +20,7 @@ tags: [J2EE,DataSource]
 - 开发人员无需知道正式数据库的密码
 
 Jndi+DataSource
-===============
+-------------
 到公司后，发现成熟商业产品都是使用Jndi+DataSource，那么这样方式有什么好处呢？
 对开发人员屏蔽数据库细节，只要通过JNDI取得数据源就可以了，无需关心数据库连接是如何建立的；数据源通常都提供了数据库连接池的功能。
 数据库连接是一种关键的有限的昂贵的资源，而且数据库连接的建立和关闭也是很耗费系统资源的。
@@ -92,7 +92,7 @@ DataSource貌似是和应用服务器绑定的，比如tomcat、Jboss等都有�
 
 > Finally, it returns the object registered under the name of jdbc/PrimaryDBInTheContainer.
 
-- [resource-ref usage in Web.xml with Tomcat 5.5 and Spring](http://stackoverflow.com/questions/9078511/resource-ref-usage-in-web-xml-with-tomcat-5-5-and-spring)
+- 另一篇文章：[resource-ref usage in Web.xml with Tomcat 5.5 and Spring](http://stackoverflow.com/questions/9078511/resource-ref-usage-in-web-xml-with-tomcat-5-5-and-spring)
 
 > The idea is that specifying resources in the web.xml has the advantage of separating the developer role from the deployer role. In other words, as a developer, you don't have to know what your required resources are actually called in production, and as the guy deploying the application, you will have a nice list of names to map to real resources.
 
