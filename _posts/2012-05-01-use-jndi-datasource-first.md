@@ -53,14 +53,14 @@ DataSource貌似是和应用服务器绑定的，比如tomcat、Jboss等都有�
 　　url 表示数据库URL地址
 
 然后在代码中，就可以通过jndi获取DataSource了：
-<pre class="brush: java">
+
 	Context initCtx = new InitialContext();
 	Context envCtx = (Context) initCtx.lookup("java:comp/env");// "java:/comp/env/"是固定写法
 	DataSource ds = (DataSource) envCtx.lookup("jdbc/testDs");//后面接的是context.xml中的Resource中name属性的值
 　　Connection conn = ds.getConnection();
 
 	//……
-</pre>
+
 在web.xml中添加如下代码：
 
 	<resource-ref>
@@ -76,7 +76,7 @@ http://stackoverflow.com/questions/9078511/resource-ref-usage-in-web-xml-with-to
 
 You can always refer to resources in your application directly by their JNDI name as configured in the container, but if you do so, essentially you wiring the container-specific name into your code. This has some disadvantages, for example, if you'll ever want to change the name later for some reason, you'll need to update all the references in all your applications, and then rebuild and redeploy them.
 
-<resource-ref> introduces another layer of indirection: you specify the name you want to use in the web.xml, and depending on the container, provide a binding in a container-specific configuration file.
+\<resource-ref\>introduces another layer of indirection: you specify the name you want to use in the web.xml, and depending on the container, provide a binding in a container-specific configuration file.
 
 So here's what happens: let's say you want to lookup the java:comp/env/jdbc/primaryDB name. The container finds that web.xml has a <resource-ref> element for jdbc/primaryDB, so it will look into the container-specific configuration, that contains something similar to the following:
 
