@@ -37,7 +37,9 @@ public class CountDownLatchDemo {
         **/
         CountDownLatch end = new CountDownLatch(PLAY_AMOUNT);
         Player[] plays = new Player[PLAY_AMOUNT];
-
+        fr(int i = 0; i < PLAY_AMOUNT; i++) {
+            plays[i] = new Player(i + 1, begin, end);
+        }
         ExecutorService exe = Executors.newFixedThreadPool(PLAY_AMOUNT);
         for (Player p : plays) {//各就各位   
             exe.execute(p);
