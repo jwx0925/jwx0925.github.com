@@ -37,10 +37,23 @@ public class CountDownLatchDemo {
         **/
         CountDownLatch end = new CountDownLatch(PLAY_AMOUNT);
         Player[] plays = new Player[PLAY_AMOUNT];
-        for (int i = 0; i < PLAY_AMOUNT; i++) {
-            plays[i] = new Player(i + 1, begin, end);
+
+        ExecutorService exe = Executors.newFixedThreadPool(PLAY_AMOUNT);
+        for (Player p : plays) {//各就各位   
+            exe.execute(p);
+        }
+        System.out.println("比赛开始");
+        begin.countDown();//宣布开始   
+        try {
+            end.await();//等待结束   
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            System.out.println("比赛结束");
         }
 
+        //注意：此时main线程已经要结束了，但是exe线程如果不关闭是不会结束的   
+        exe.shutdown();
     }
 }
 </pre>
