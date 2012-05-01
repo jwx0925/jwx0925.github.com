@@ -32,6 +32,11 @@ public class CountDownLatchDemo {
         **/
         CountDownLatch begin = new CountDownLatch(1);
 
+        /*
+         * 每个队员跑到末尾时，则报告一个到达，所有人员都到达时，则比赛结束
+        **/
+        CountDownLatch end = new CountDownLatch(PLAY_AMOUNT);
+        Player[] plays = new Player[PLAY_AMOUNT];
 
     }
 }
