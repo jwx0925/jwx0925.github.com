@@ -1,8 +1,8 @@
-﻿---
+---
 layout: post
-title: 初体验Jndi+DataSource
-description: 初体验Jndi+DataSource，Jndi+DataSource的优点，resource-ref的作用
-keywords: Jndi, DataSource,resource-ref
+title: 初体验Jndi DataSource
+description: 初体验Jndi DataSource,Jndi DataSource的优点,resource_ref的作用
+keywords: Jndi,DataSource
 category: J2EE
 tags: [J2EE],[DataSource]
 ---

@@ -12,7 +12,7 @@ paginate: 5
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title: /蚊香/Is/Null
+title: 蚊香/Is/Null
 tagline: 专注最时髦的web开发技术
 
 author:
@@ -102,7 +102,7 @@ JB:
   analytics:
     provider: google 
     google: 
-        tracking_id : 'UA-31307081-1'
+        tracking_id: 'UA-31307081-1'
     getclicky:
       site_id: 
     mixpanel:
