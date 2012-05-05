@@ -49,10 +49,9 @@ tags: [uml]
 
 *关联关系*比较普通，比聚合关系和组合关系更加通俗一点，就是两者有关系。这种关系比较多样化，所以关联关系可以是双向的，也可以是单向的。双向的关联可以有两个箭头或者没有箭头，单向的关联有一个箭头。实现方面，关联关系是通过使用成员变量来实现的。
 <pre class="brush: java">
-class TuDi {
+public class TuDi {
 }
-
-class TangSeng {
+public class TangSeng {
 	protected list&lt;TuDi> tdlist;
 }
 </pre>
