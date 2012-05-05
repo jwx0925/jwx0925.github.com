@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: Uml中各种关系复习
 description: UML、聚合关系和组合关系、关联关系和依赖关系
