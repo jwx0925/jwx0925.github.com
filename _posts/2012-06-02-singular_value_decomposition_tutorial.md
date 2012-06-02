@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: 奇异值分解简明教程（翻译）
 description: UML、聚合关系和组合关系、关联关系和依赖关系
