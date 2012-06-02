@@ -26,7 +26,7 @@ As a simple example, let's look at golf scores. Suppose Phil, Tiger, and Vijay p
 
 举个简单的例子：高尔夫比赛中的比分。假设Phil, Tiger, and Vijay在一起比赛，一共9个洞。下面的记分牌可以理解为一个矩阵（洞 * 运动员）。
 
-![2012-06-02-svd-1](/assets/images/2012-06-02-svd-1.jpg)
+![2012-06-02-svd-1](/assets/images/2012-06-02-svd-1.JPG)
 
 Let's look at the problem of trying to predict what score each player will make on a given hole. One idea is give each hole a HoleDifficulty factor, and each player a PlayerAbility factor. The actual score is predicted by multiplying these two factors together.
 
@@ -50,13 +50,13 @@ In fact, this is the one dimensional (1-D) SVD factorization of the scorecard. W
 
 事实上，这就是一个计分板矩阵的一维的奇异值分解。我们将我们的计分板矩阵表现2个向量（HoleDifficulty向量和PlayerAbility向量）的乘积。为了预测所有的得分，我们简单地将HoleDifficulty和PlayerAbility相乘。根据矩阵的乘法定律，我们得到一个得分矩阵。
 
-![2012-06-02-svd-2](/assets/images/2012-06-02-svd-2.jpg)
+![2012-06-02-svd-2](/assets/images/2012-06-02-svd-2.JPG)
 
 Mathematicians like to keep everything orderly, so the convention is that all vectors should be scaled so they have length 1. For example, the PlayerAbility vector is modified so that the sum of the squares of its elements add to 1, instead of the current 12 + 12 + 12 = 3. To do this, we have to divide each element by the square root of 3, so that when we square it, it becomes 1/3 and the three elements add to 1. Similarly, we have to divide each HoleDifficulty element by the square root of 148. The square root of 3 times the square root of 148 is our scaling factor 21.07. The complete 1-D SVD factorization (to 2 decimal places) is:
 
 数学家喜欢把一切都保持简单有序，所以我们的原则是缩放所有的向量，使其长度为1。例如，PlayerAbility向量所有元素的平方相加等于3：1^2+1^2+1^2=3。为了完成计算，我们必须把每个元素除以√3，这样得到每个元素为1/√3=0.58。同样，我们用同样的方法计算HoleDifficulty，比如第一个洞的难度系数为4/√148=0.33。这样缩放因子（scaling factor）为√148×√3=21.07
 
-![2012-06-02-svd-3](/assets/images/2012-06-02-svd-3.jpg)
+![2012-06-02-svd-3](/assets/images/2012-06-02-svd-3.JPG)
 
 Our HoleDifficultyvector, that starts with 0.33, is called the Left Singular Vector. The ScaleFactor is the Singular Value, and our PlayerAbilityvector, that starts with 0.58 is the Right Singular Vector. If we represent these 3 parts exactly, and multiply them together, we get the exact original scores. This means our matrix is a rank 1 matrix, another way of saying it has a simple and predictable pattern.
 
@@ -73,13 +73,13 @@ Rather than guessing HoleDifficulty and PlayerAbility factors and subtracting pr
 
 相比于猜测HoleDifficulty和PlayerAbility因子，减去预测分数，还有更加强大的算法能够帮你算出SVD分解。让我们看看Phil, Tiger, and Vijay在2007年参加的9个洞的真实分数。
 
-![2012-06-02-svd-4](/assets/images/2012-06-02-svd-4.jpg)
+![2012-06-02-svd-4](/assets/images/2012-06-02-svd-4.JPG)
 
 The 1-D SVD factorization of the scores is shown below. To make this example easier to understand, I have incorporated the ScaleFactor into the PlayerAbility and HoleDifficulty vectors so we can ignore the ScaleFactor for this example.
 
 下面是一维的SVD分解。为了容易理解，我已经将ScaleFactor合并到PlayerAbility和HoleDifficulty向量中，所以我们可以暂时忽略ScaleFactor。
 
-![2012-06-02-svd-5](/assets/images/2012-06-02-svd-5.jpg)
+![2012-06-02-svd-5](/assets/images/2012-06-02-svd-5.JPG)
 
 Notice that the HoleDifficulty factor is almost the average of that hole for the 3 players. For example hole 5, where everyone scored 4, does have a factor of 4.00. However hole 6, where the average score is also 4, has a factor of 4.05 instead of 4.00. Similarly, the PlayerAbility is almost the percentage of par that the player achieved, For example Tiger shot 39 with par being 36, and 39/36 = 1.08 which is almost his PlayerAbility factor (for these 9 holes) of 1.07.
 
@@ -101,7 +101,7 @@ Once these differences have been found, we can do the same thing again and predi
 
 一旦发现了这些不同，我们就可以不断的做同样的事，通过公式HoleDifficulty2 * PlayerAbility2来预测不同。因为这些factors试图预测这些不同，所以我们现在有2二维factors，我们将其命名为HoleDifficulty2来表明他们是第二组factors。
 
-![2012-06-02-svd-6](/assets/images/2012-06-02-svd-6.jpg)
+![2012-06-02-svd-6](/assets/images/2012-06-02-svd-6.JPG)
 
 There are some interesting observations we can make about these factors. Notice that hole 8 has the most significant HoleDifficulty2 factor (-1.29). That means that it is the hardest hole to predict. Indeed, it was the only hole on which none of the 3 players made par. It was especially hard to predict because it was the most difficult hole relative to par (HoleDifficulty - par) = (3.39 - 3) = 0.39, and yet Phil birdied it making his score more than a stroke below his predicted score (he scored 2 versus his predicted score of 3.08). Other holes that were hard to predict were holes 3 (0.80) and 7 (0.89) because Vijay beat Phil on those holes even though, in general, Phil was playing better.
 
@@ -113,13 +113,13 @@ The full SVD for this example matrix (9 holes by 3 players) has 3 sets of factor
 
 这个例子中（9个洞 * 3个运动员），一个完整的SVD是有3个factors。事实上，一个m*n的矩阵，在m>n的情况下最多有n个factors，所以我们的9*3的矩阵不能有大于3个factors。下面是完整的SVD分解结果：
 
-![2012-06-02-svd-7](/assets/images/2012-06-02-svd-7.jpg)
+![2012-06-02-svd-7](/assets/images/2012-06-02-svd-7.JPG)
 
 By SVD convention, the HoleDifficulty and PlayerAbility vectors should all have length 1, so the conventional SVD factorization is:
 
 按照SVD的约定，HoleDifficulty和PlayerAbility矩阵所有的长度都必须是1，所以我们完整的SVD分解结果为：
 
-![2012-06-02-svd-8](/assets/images/2012-06-02-svd-8.jpg)
+![2012-06-02-svd-8](/assets/images/2012-06-02-svd-8.JPG)
 
 ##Latent Semantic Analysis Tutorial
 
