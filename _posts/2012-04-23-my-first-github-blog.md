@@ -32,5 +32,5 @@ tags : [life]
 - YAML：一种数据结构
 - [MarkDown](http://wowubuntu.com/markdown/)：一种标记语言。
 
-详细的教程可以看[jekyllbootstrap](http://jekyllbootstrap.com/lessons/jekyll-introduction.html)这篇文章,不懂得，大家可以交流~
+详细的教程可以看[jekyllbootstrap](http://jekyllbootstrap.com/lessons/jekyll-introduction.html)这篇文章,不懂得，大家可以交流~~
 
